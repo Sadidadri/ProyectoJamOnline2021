@@ -11,16 +11,29 @@ public class PlayerMovement : MonoBehaviour
 
 
     public GameObject bottomLine;
+    private BoxCollider2D bottomLineCollider;
+    public GameObject centralLine;
     public GameObject topLine;
+    private BoxCollider2D topLineCollider;
 
     void Start(){
         isGrounded = true;
         rb2d = GetComponent<Rigidbody2D>();
-
+        //Obtain bottom collider line and enable it
+        bottomLineCollider = bottomLine.GetComponent<BoxCollider2D>();
+        topLineCollider = topLine.GetComponent<BoxCollider2D>();
     }
 
 
     void FixedUpdate(){
+        //Encima de la linea del medio
+        if (transform.position.y >= centralLine.transform.position.y + 0.2){
+            bottomLineCollider.enabled = true;
+        }
+        if (transform.position.y <= centralLine.transform.position.y - 0.2){
+            topLineCollider.enabled = true;
+        }
+
         if ((Input.GetKey("up") || Input.GetKey("w")) && isGrounded){
             JumpUp();
         }
@@ -32,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private void JumpUp(){
         rb2d.AddForce(Vector2.up * jumpForce);
         jumpDirection = "up";
-        //Obtain bottom collider line and enable it
-        bottomLine.GetComponent<BoxCollider2D>().enabled = true;
+        
 
     }
     private void JumpDown(){
