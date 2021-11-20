@@ -21,10 +21,9 @@ public class LineColliderEnabler : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Choque");
+        //Debug.Log("Choque");
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Choca el jugador");
             //Disable the line collider
             lineCollider.enabled = false;
 

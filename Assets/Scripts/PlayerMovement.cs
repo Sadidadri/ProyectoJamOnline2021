@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public static string jumpDirection = "static";
     public static bool isGrounded;
     public static Rigidbody2D rb2d;
-    public float jumpForce = 250;
+    public float jumpForce = 300;
 
 
     public GameObject bottomLine;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCounters : MonoBehaviour
 {
     public static int lifes;
-    private double points;
+    public static double points;
 
     // Start is called before the first frame update
     void Start()
