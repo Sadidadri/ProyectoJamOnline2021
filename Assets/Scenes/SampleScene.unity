@@ -6056,6 +6056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 500
   bottomLine: {fileID: 816461343}
+  centralLine: {fileID: 942446255}
   topLine: {fileID: 1809763065}
 --- !u!50 &1552904091
 Rigidbody2D:
