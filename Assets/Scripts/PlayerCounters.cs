@@ -32,7 +32,7 @@ public class PlayerCounters : MonoBehaviour
             gameOverMenu.SetActive(true);
             Destroy(score);
             gameFinished = true;
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             AudioListener.pause = true;
             //Debug.Log("Game Over");
         }
