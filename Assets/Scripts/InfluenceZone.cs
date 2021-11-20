@@ -6,20 +6,20 @@ public class InfluenceZone : MonoBehaviour
 {
 
 
-    private void OnTriggerEnter2D(Collider2D collision){
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 
-
-            Debug.Log("Entre en la linea");
-            PlayerMovement.rb2d.gravityScale = 0;
-            PlayerMovement.isGrounded = true;   
+        Debug.Log("Entre en la linea");
+        PlayerMovement.jumpDirection = "static";
+        PlayerMovement.isGrounded = true;
 
     }
-    
-    private void OnTriggerExit2D(Collider2D collision){
 
-            Debug.Log("Sali de la linea");
-        PlayerMovement.rb2d.gravityScale = 1;
-           PlayerMovement.isGrounded = false;   
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        Debug.Log("Sali de la linea");
+        PlayerMovement.isGrounded = false;
 
     }
 }
