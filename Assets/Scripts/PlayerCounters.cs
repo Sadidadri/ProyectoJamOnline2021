@@ -5,14 +5,19 @@ using TMPro;
 
 public class PlayerCounters : MonoBehaviour
 {
+    
+    bool gameFinished = false;
     public static int lifes;
     public static double points;
     public TextMeshProUGUI score;
+    public TextMeshProUGUI finalScore;
+
+    public GameObject gameOverMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-            
+        gameOverMenu.SetActive(false);
         lifes = 3;
         points = 0;
     }
@@ -21,8 +26,15 @@ public class PlayerCounters : MonoBehaviour
     void Update()
     {
         //Game over
-        if (lifes <= 0) {
-            Debug.Log("Game Over");
+        if (lifes <= 0 && !gameFinished) {
+            string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
+            finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
+            gameOverMenu.SetActive(true);
+            Destroy(score);
+            gameFinished = true;
+            //Time.timeScale = 0;
+            AudioListener.pause = true;
+            //Debug.Log("Game Over");
         }
         //Add points
         points += 0.01;

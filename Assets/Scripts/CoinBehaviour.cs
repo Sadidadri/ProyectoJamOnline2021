@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinBehaviour : MonoBehaviour
 {
 
-
+    public AudioSource audioSource;
     public float speed = 5;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,8 @@ public class CoinBehaviour : MonoBehaviour
         //1 life less
         if (collision.gameObject.tag == "Player")
         {
+            audioSource.Play();
             PlayerCounters.points += 5;
-            Debug.Log("Puntos: " + PlayerCounters.points);
 
             Destroy(gameObject);
         }

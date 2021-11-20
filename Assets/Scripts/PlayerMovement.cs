@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public AudioSource audioSource;
     public static string jumpDirection = "static";
     public static bool isGrounded;
     public static Rigidbody2D rb2d;
@@ -43,12 +45,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void JumpUp(){
+        audioSource.Play();
         rb2d.AddForce(Vector2.up * jumpForce);
         jumpDirection = "up";
         
 
     }
     private void JumpDown(){
+        audioSource.Play();
         rb2d.AddForce(Vector2.up * -jumpForce);
         jumpDirection = "down";
         //Obtain top collider line and enable it
