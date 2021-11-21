@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ComportamientoBotones : MonoBehaviour
 {
+    public AudioSource sonidoClick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,21 +21,24 @@ public class ComportamientoBotones : MonoBehaviour
     }
 
     public void OnStartButtonClick(){
+        sonidoClick.Play();
         SceneManager.LoadScene("SampleScene");
     }
 
     public void OnRetryButtonClick(){
-        Debug.Log("Retry pulsado");
+        sonidoClick.Play();
       SceneManager.LoadScene("SampleScene");
       Time.timeScale = 1;
       AudioListener.pause = false;
    }
 
    public void OnBackMenuButtonClick(){
+       sonidoClick.Play();
       SceneManager.LoadScene("Menu");
    }
 
    public void OnCreditsButtonClick(){
+       sonidoClick.Play();
       SceneManager.LoadScene("Credits");
    }
 

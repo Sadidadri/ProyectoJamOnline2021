@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
 
+    public AudioSource sonidoGolpe;
     public float speed = 5;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
         //1 life less
         if (collision.gameObject.tag == "Player")
         {
+            sonidoGolpe.Play();
             PlayerCounters.lifes -= 1;
             Debug.Log("Vidas: " + PlayerCounters.lifes);
         }
