@@ -27,7 +27,7 @@ public class ComportamientoBotones : MonoBehaviour
 
     public void OnRetryButtonClick(){
         Time.timeScale = 1;
-      AudioListener.pause = false;
+      //AudioListener.pause = false;
         sonidoClick.Play();
       SceneManager.LoadScene("SampleScene");
       Time.timeScale = 1;
@@ -36,7 +36,7 @@ public class ComportamientoBotones : MonoBehaviour
 
    public void OnBackMenuButtonClick(){
        Time.timeScale = 1;
-      AudioListener.pause = false;
+      //AudioListener.pause = false;
        sonidoClick.Play();
       SceneManager.LoadScene("Menu");
       

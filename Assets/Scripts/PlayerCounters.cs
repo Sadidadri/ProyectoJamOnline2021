@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerCounters : MonoBehaviour
 {
-    
+    public AudioSource levelMusic;
     public AudioSource derrotaSound;
     public static bool winEventSuccess = false;
     public GameObject WinMenu;
@@ -30,6 +30,12 @@ public class PlayerCounters : MonoBehaviour
     {
         //Game over
         if (lifes <= 0 && !gameFinished) {
+            if (levelMusic.isPlaying){
+
+                levelMusic.Stop();
+            }
+
+            
             derrotaSound.Play();
             string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
             finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
@@ -37,18 +43,20 @@ public class PlayerCounters : MonoBehaviour
             Destroy(score);
             gameFinished = true;
             Time.timeScale = 0;
-            AudioListener.pause = true;
             //Debug.Log("Game Over");
         }
         //WIN
         if (!gameFinished && winEventSuccess){
+            if (levelMusic.isPlaying) {
+                levelMusic.Stop();
+            }
+            
             string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
             finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
             WinMenu.SetActive(true);
             Destroy(score);
             gameFinished = true;
             Time.timeScale = 0;
-            AudioListener.pause = true;
         }
         /*
 

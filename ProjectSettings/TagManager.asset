@@ -7,6 +7,7 @@ TagManager:
   - Points
   - GameOver
   - OnlyForTest
+  - MusicaNivel
   layers:
   - Default
   - TransparentFX
