@@ -5,7 +5,8 @@ using TMPro;
 
 public class PlayerCounters : MonoBehaviour
 {
-    
+    public static bool winEventSuccess = false;
+    public GameObject WinMenu;
     bool gameFinished = false;
     public static int lifes;
     public static double points;
@@ -36,6 +37,19 @@ public class PlayerCounters : MonoBehaviour
             AudioListener.pause = true;
             //Debug.Log("Game Over");
         }
+        //WIN
+        if (!gameFinished && winEventSuccess){
+            string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
+            finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
+            WinMenu.SetActive(true);
+            Destroy(score);
+            gameFinished = true;
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+        }
+        /*
+
+        */
         //Add points
         points += 0.01;
 
