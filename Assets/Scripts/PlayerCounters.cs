@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerCounters : MonoBehaviour
 {
+    public AudioSource derrotaSound;
     public static bool winEventSuccess = false;
     public GameObject WinMenu;
     bool gameFinished = false;
@@ -28,6 +29,7 @@ public class PlayerCounters : MonoBehaviour
     {
         //Game over
         if (lifes <= 0 && !gameFinished) {
+            derrotaSound.Play();
             string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
             finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
             gameOverMenu.SetActive(true);
