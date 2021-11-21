@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class Muelte : MonoBehaviour
 {
-
-    public AudioSource sonidoGolpe;
-    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +13,15 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * speed);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //1 life less
+        //GAME OVER
         if (collision.gameObject.tag == "Player")
         {
-            sonidoGolpe.Play();
-            PlayerCounters.lifes -= 1;
+            PlayerCounters.lifes -= 5;
             Debug.Log("Vidas: " + PlayerCounters.lifes);
         }
     }
