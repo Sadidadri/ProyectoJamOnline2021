@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerCounters : MonoBehaviour
 {
+    
     public AudioSource derrotaSound;
     public static bool winEventSuccess = false;
     public GameObject WinMenu;
