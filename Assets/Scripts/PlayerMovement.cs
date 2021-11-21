@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     // Reference to Sprite Renderer component
     private Renderer rend;
-    private Color color1Golpe = new Color(150f/255f, 150f/255f, 150f/255f);
-    private Color color2Golpe = new Color(80f/255f, 80f/255f, 80f/255f);
-    private Color color3GolpesMuelte = new Color(32f/255f, 32f/255f, 32f/255f);
+    private Color color1Golpe = new Color(251/255f, 255f/255f, 136f/255f);
+    private Color color2Golpe = new Color(255f/255f, 208/255f, 136f/255f);
+    private Color color3GolpesMuelte = new Color(207f/255f, 126f/255f, 0f/255f);
     public AudioSource audioSource;
     public static string jumpDirection = "static";
     public static bool isGrounded;

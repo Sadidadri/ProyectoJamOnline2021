@@ -21,6 +21,7 @@ public class PlayerCounters : MonoBehaviour
     void Start()
     {
         gameOverMenu.SetActive(false);
+        WinMenu.SetActive(false);
         lifes = 3;
         points = 0;
     }
@@ -30,10 +31,7 @@ public class PlayerCounters : MonoBehaviour
     {
         //Game over
         if (lifes <= 0 && !gameFinished) {
-            if (levelMusic.isPlaying){
-
-                levelMusic.Stop();
-            }
+            levelMusic.Stop();
 
             
             derrotaSound.Play();
@@ -47,9 +45,8 @@ public class PlayerCounters : MonoBehaviour
         }
         //WIN
         if (!gameFinished && winEventSuccess){
-            if (levelMusic.isPlaying) {
-                levelMusic.Stop();
-            }
+            levelMusic.Stop();
+
             
             string finalPoints = "Score: "+ Mathf.FloorToInt((float)points);
             finalScore.SetText("Score: "+ Mathf.FloorToInt((float)points)); 
