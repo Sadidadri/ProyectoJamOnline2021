@@ -28791,7 +28791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 627141201}
-  jumpForce: 400
+  jumpForce: 200
   bottomLine: {fileID: 816461343}
   centralLine: {fileID: 942446255}
   topLine: {fileID: 1809763065}
